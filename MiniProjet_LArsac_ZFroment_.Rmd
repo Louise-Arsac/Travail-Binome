@@ -20,6 +20,8 @@ output:
     toc: yes
     toc_depth: 3 '3'
 csl: iso690-author-date-fr-no-abstract.csl #le nom du style pour la biblio, doit être dans le même dossier
+bibliography: biblio1.bib
+
 ---
 
 ```{r setup, include=FALSE}
@@ -43,7 +45,8 @@ knitr::include_graphics("Reseauxsociaux.jpg") #afficher l'image de markdown, doi
 
 # **Définition**
 
-<span style='color:red'>Un Réseau social</span> a pour objectif de mettre en relation les internautes entre eux afin de créer des communautés ». C’est une des catégories des médias sociaux mais il a vraiment pour objectif de créer des interactions entre plusieurs personnes.
+<span style='color:red'>Un Réseau social</span> a pour objectif de mettre en relation les internautes entre eux afin de créer des communautés ». [ce site](<https://business.lesechos.fr/directions-numeriques/digital/social-media/0301007159501-les-reseaux-sociaux-sont-ils-encore-sociaux-316885.php>)
+C’est une des catégories des médias sociaux mais il a vraiment pour objectif de créer des interactions entre plusieurs personnes.
 
 <span style='color:red'>Un média social</span> est basé sur la communication. Il permet de publier des contenus et de générer de l’engagement pour que les internautes parlent de vous.Au départ un média social se définit comme étant un support pour transmettre de l’information massivement. Ce qu’il ne faut pas oublier dans le média social, c’est que chaque utilisateur peut recevoir l’information mais également la créer
 
@@ -73,8 +76,24 @@ barplot(sort(med), horiz=TRUE, las=1,main="truc")
 # ***Interprétation***
 On observe que.......
 
+# **Reflexion sociologique***
+
+
+Les amis de mes amis tendent-ils à devenir mes amis!? Autrement dit, si nous
+observons une communauté d’individus tels que des étudiants qui se trouvent amenés à
+se côtoyer dans une université ou un internat, doit-on penser que les relations
+affinitaires qui vont s’instaurer dans le groupe vont tendre à devenir transitives ou pas!?
+Les jeunes vont-ils se grouper en fonction de similitudes (même sexe, fumeur ou non
+fumeur, centres d’intérêt communs)!? Dans le même esprit, si l’on observe une
+communauté à un instant donné et que l’on postule que les relations que l’on y voit
+constituent une situation de croisière résultant d’un processus déjà ancien, quelles
+hypothèses peut-on faire sur ce processus![@Degenne2004réseaux]
 
 # **Les dangers des réseaux sociaux**
+
+L’utilisation naïve des réseaux sociaux peut engendrer des conséquences émotionnelles, financières mais aussi juridiques et mener, dans certains cas, à la divulgation ou propagation de vos données personnelles. Les enfants et adolescents courent déjà un risque sur les réseaux sociaux, mais les adultes, les pouvoir publics, les banques et même les grandes entreprises Web ne sont pas à l’abri des risques.
+[site](https://www.ionos.fr/digitalguide/web-marketing/les-media-sociaux/dangers-reseaux-sociaux/)
+
 
 # **Références**
 
@@ -82,6 +101,10 @@ On observe que.......
 <https://mooc.chatons.org/mod/lesson/view.php?id=36&pageid=6&startlastseen=yes>
 
 <https://business.lesechos.fr/directions-numeriques/digital/social-media/0301007159501-les-reseaux-sociaux-sont-ils-encore-sociaux-316885.php>
+
+<https://www.ionos.fr/digitalguide/web-marketing/les-media-sociaux/dangers-reseaux-sociaux/>
+
+https://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do
 
 ## ***Bibliographie***
 
