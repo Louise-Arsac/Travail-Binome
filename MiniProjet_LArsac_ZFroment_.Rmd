@@ -1,5 +1,5 @@
 ---
-title: "ProjetBinome"
+title: "L'utilisation des réseaux sociaux"
 author: "Zélie Froment & Louise Arsac"
 date: "04/05/2020"
 output:
@@ -21,7 +21,7 @@ output:
     number_sections: yes
     toc: yes
     toc_depth: 3 '3'
-
+csl: iso690-author-date-fr-no-abstract.csl #le nom du style pour la biblio, doit être dans le même dossier
 ---
 
 ```{r setup, include=FALSE}
@@ -37,5 +37,21 @@ library(bookdown)
 library(knitr)
 library(tibble)
 library(tinytex)
+```
 
-## TEST
+```{r logo, echo=FALSE, out.width = '70%', fig.align = "center",fig.cap="Les réseaux sociaux"}
+knitr::include_graphics("Reseauxsociaux.jpg") #afficher l'image de markdown, doit être dans le même dossier
+```
+
+# **Définition**
+
+<span style='color:red'>Un Réseau social</span> a pour objectif de mettre en relation les internautes entre eux afin de créer des communautés ». C’est une des catégories des médias sociaux mais il a vraiment pour objectif de créer des interactions entre plusieurs personnes.
+
+# **L'utilisation des réseaux sociaux**
+# **Les dangers des réseaux sociaux**
+# **Références**
+Mook chaton
+https://business.lesechos.fr/directions-numeriques/digital/social-media/0301007159501-les-reseaux-sociaux-sont-ils-encore-sociaux-316885.php
+
+
+
