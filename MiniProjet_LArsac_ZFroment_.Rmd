@@ -58,7 +58,7 @@ C’est une des catégories des médias sociaux mais il a vraiment pour objectif
 
 DataReseau <- read.csv2(file = "ReseauxSociaux.csv",header=TRUE,sep=";", dec=".", row.names=1) #,encoding="latin1")# on import en créant l'objet
 datatibble <- as_tibble(DataReseau)
-knitTab1 <- knitr::kable(DataReseau[,1:2], caption="Moyennes du temps par région par an",align = "c") #séparation moyennes
+knitTab1 <- knitr::kable(DataReseau[,1:2],caption="Pourcentage de connexion aux réseaux sociaux par rapport à l'utilisation d'internet",align = "c")
 knitTab1
 ```
 
@@ -69,12 +69,13 @@ knitTab1
 
 med<-apply(DataReseau,1,mean)
 par(mar=c(4,14,3,1))
-barplot(sort(med), horiz=TRUE, las=1,main="truc")
+barplot(sort(med), horiz=TRUE, las=1,main = "Moyenne par région française du taux de connexion aux réseaux sociaux"))
 ```
 
 
 # ***Interprétation***
-On observe que.......
+
+Le jeu de donné contient **`r nrow(DataReseau)`** régions françaises. Le rapport entre le nombre de connexion à un réseau social et le nombre de connexion à internet équivaut en moyenne entre 2018 et 2019 en France à : **`r round(mean(DataReseau[1,1],DataReseau[1,2]))`**. Actuellement, la région la plus consommatrice de réseaux sociaux est : **`r names(med[med==max(med)])`**. Celle au contraire qui utilise le moins les réseaux sociaux par rapport à son nombre de connexion internet est : **`r names(med[med==min(med)])`**
 
 # **Reflexion sociologique***
 
