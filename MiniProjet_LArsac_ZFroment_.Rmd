@@ -68,7 +68,7 @@ knitTab1
 
 med<-apply(DataReseau,1,mean)
 par(mar=c(4,14,3,1))
-barplot(sort(med), horiz=TRUE, las=1,main = "Moyenne par région française du taux de connexion aux réseaux sociaux")
+barplot(sort(med), horiz=TRUE, las=1, main = "Moyenne par région française d'utilisation des réseaux sociaux", cex.main =1)
 ```
 
 
