@@ -2,31 +2,40 @@
 title: "ProjetBinome"
 author: "Zélie Froment & Louise Arsac"
 date: "04/05/2020"
-output: 
-html_document: 
-    fig_caption: yes #gestions génération HTML : titre graphiques et figures
-    number_sections: yes #gestions génération HTML : numéro des titres et parties
+output:
+  html_document:
+    fig_caption: yes
+    number_sections: yes
     toc: yes
     toc_depth: 3
     toc_float: yes
   pdf_document:
-    fig_caption: yes #gestions génération PDF : titre graphiques et figures
-    includes:  
-      in_header: my_header.tex #gestions génération PDF : permet le maintien de la bonne position des graphs/tableaux
-    number_sections: yes #gestions génération PDF : numéro des titres et parties
+    fig_caption: yes
+    includes:
+      in_header: my_header.tex
+    number_sections: yes
     toc: yes
     toc_depth: 3
   word_document:
-    fig_caption: yes #gestions génération WORD : titre graphiques et figures
-    number_sections: yes #gestions génération WORD : numéro des titres et parties
+    fig_caption: yes
+    number_sections: yes
     toc: yes
-    toc_depth: 3 '3' #format glissant de la toc
-csl: iso690-author-date-fr-no-abstract.csl #le nom du style pour la biblio, doit être dans le même dossier
-bibliography: biblio2.bib #le fichier de biblio, on peut le créer avec Zotero, doit être dans le même dossier
+    toc_depth: 3 '3'
+
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## 
+```{r library, include=FALSE} 
+knitr::opts_chunk$set(echo = TRUE) 
+#ajouter toute les library nécessaires
+library(ade4)
+library(FactoMineR)
+library(bookdown)
+library(knitr)
+library(tibble)
+library(tinytex)
+
+## TEST
