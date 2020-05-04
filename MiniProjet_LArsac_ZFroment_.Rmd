@@ -41,44 +41,47 @@ library(tinytex)
 knitr::include_graphics("Reseauxsociaux.jpg") #afficher l'image de markdown, doit être dans le même dossier
 ```
 
-# ***Définition***
+# **Définition**
 
 <span style='color:red'>Un Réseau social</span> a pour objectif de mettre en relation les internautes entre eux afin de créer des communautés ». C’est une des catégories des médias sociaux mais il a vraiment pour objectif de créer des interactions entre plusieurs personnes.
 
-# ***L'utilisation des réseaux sociaux***
-# ** Tableau de données **
+<span style='color:red'>Un média social</span> est basé sur la communication. Il permet de publier des contenus et de générer de l’engagement pour que les internautes parlent de vous.Au départ un média social se définit comme étant un support pour transmettre de l’information massivement. Ce qu’il ne faut pas oublier dans le média social, c’est que chaque utilisateur peut recevoir l’information mais également la créer
 
-```{r DataReseau, echo = FALSE,eval=TRUE}
+# **L'utilisation des réseaux sociaux**
 
+## ***Tableau de données***
 
+```{r DataReseau, echo = FALSE, eval =TRUE}
 
-
-DataReseau <- read.table(file = "ReseauxSociaux.xls",header=TRUE)# on import en créant l'objet
-DataReseau
-
-data_frame(DataReseau)
-
-
-```
-# ** Graphique ** 
-
-```{r}
-DataReseau<- boxplot(xlab= "regions ",las=2,col="grey",ylab="Pourcentage",cex.lab=0.7,cex.axis=0.7)
-
-ggplot (DataReseau)
-boxplot (DataReseau)
+DataReseau <- read.csv2(file = "ReseauxSociaux.csv",header=TRUE,sep=";", dec=".", row.names=1) #,encoding="latin1")# on import en créant l'objet
+datatibble <- as_tibble(DataReseau)
+knitTab1 <- knitr::kable(DataReseau[,1:2], caption="Moyennes du temps par région par an",align = "c") #séparation moyennes
+knitTab1
 ```
 
 
+# ***Graphique***
 
-# *** Interprétation ***
+```{r datareg, echo = FALSE,eval=TRUE}
+
+med<-apply(DataReseau,1,mean)
+par(mar=c(4,14,3,1))
+barplot(sort(med), horiz=TRUE, las=1,main="truc")
+```
+
+
+# ***Interprétation***
 On observe que.......
 
 
-# ***Les dangers des réseaux sociaux***
-# ***Références***
-Mook chaton
-https://business.lesechos.fr/directions-numeriques/digital/social-media/0301007159501-les-reseaux-sociaux-sont-ils-encore-sociaux-316885.php
+# **Les dangers des réseaux sociaux**
 
+# **Références**
 
+## ***Liens***
+<https://mooc.chatons.org/mod/lesson/view.php?id=36&pageid=6&startlastseen=yes>
+
+<https://business.lesechos.fr/directions-numeriques/digital/social-media/0301007159501-les-reseaux-sociaux-sont-ils-encore-sociaux-316885.php>
+
+## ***Bibliographie***
 
