@@ -21,7 +21,6 @@ output:
     toc_depth: 3 '3'
 csl: iso690-author-date-fr-no-abstract.csl #le nom du style pour la biblio, doit être dans le même dossier
 bibliography: biblio1.bib
-
 ---
 
 ```{r setup, include=FALSE}
@@ -63,21 +62,21 @@ knitTab1
 ```
 
 
-# ***Graphique***
+## ***Graphique***
 
 ```{r datareg, echo = FALSE,eval=TRUE}
 
 med<-apply(DataReseau,1,mean)
 par(mar=c(4,14,3,1))
-barplot(sort(med), horiz=TRUE, las=1,main = "Moyenne par région française du taux de connexion aux réseaux sociaux"))
+barplot(sort(med), horiz=TRUE, las=1,main = "Moyenne par région française du taux de connexion aux réseaux sociaux")
 ```
 
 
-# ***Interprétation***
+# **Interprétation**
 
 Le jeu de donné contient **`r nrow(DataReseau)`** régions françaises. Le rapport entre le nombre de connexion à un réseau social et le nombre de connexion à internet équivaut en moyenne entre 2018 et 2019 en France à : **`r round(mean(DataReseau[1,1],DataReseau[1,2]))`**. Actuellement, la région la plus consommatrice de réseaux sociaux est : **`r names(med[med==max(med)])`**. Celle au contraire qui utilise le moins les réseaux sociaux par rapport à son nombre de connexion internet est : **`r names(med[med==min(med)])`**
 
-# **Reflexion sociologique***
+# **Reflexion sociologique**
 
 
 Les amis de mes amis tendent-ils à devenir mes amis!? Autrement dit, si nous
