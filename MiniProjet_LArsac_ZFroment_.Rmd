@@ -44,7 +44,7 @@ knitr::include_graphics("Reseauxsociaux.jpg") #afficher l'image de markdown, doi
 
 # **Définition**
 
-<span style='color:red'>Un Réseau social</span> a pour objectif de mettre en relation les internautes entre eux afin de créer des communautés ». [ce site](<https://business.lesechos.fr/directions-numeriques/digital/social-media/0301007159501-les-reseaux-sociaux-sont-ils-encore-sociaux-316885.php>)
+<span style='color:red'> Nous pouvons lire sur [ce site](<https://business.lesechos.fr/directions-numeriques/digital/social-media/0301007159501-les-reseaux-sociaux-sont-ils-encore-sociaux-316885.php>) qu'un réseau social</span> a pour objectif de mettre en relation les internautes entre eux afin de créer des communautés ».
 C’est une des catégories des médias sociaux mais il a vraiment pour objectif de créer des interactions entre plusieurs personnes.
 
 <span style='color:red'>Un média social</span> est basé sur la communication. Il permet de publier des contenus et de générer de l’engagement pour que les internautes parlent de vous.Au départ un média social se définit comme étant un support pour transmettre de l’information massivement. Ce qu’il ne faut pas oublier dans le média social, c’est que chaque utilisateur peut recevoir l’information mais également la créer
@@ -91,9 +91,7 @@ hypothèses peut-on faire sur ce processus![@Degenne2004réseaux]
 
 # **Les dangers des réseaux sociaux**
 
-L’utilisation naïve des réseaux sociaux peut engendrer des conséquences émotionnelles, financières mais aussi juridiques et mener, dans certains cas, à la divulgation ou propagation de vos données personnelles. Les enfants et adolescents courent déjà un risque sur les réseaux sociaux, mais les adultes, les pouvoir publics, les banques et même les grandes entreprises Web ne sont pas à l’abri des risques.
-[site](https://www.ionos.fr/digitalguide/web-marketing/les-media-sociaux/dangers-reseaux-sociaux/)
-
+Après lecture [du site](https://www.ionos.fr/digitalguide/web-marketing/les-media-sociaux/dangers-reseaux-sociaux/) sur les médias sociaux, nous comprenons que l’utilisation naïve des réseaux sociaux peut engendrer des conséquences émotionnelles, financières mais aussi juridiques et mener, dans certains cas, à la divulgation ou propagation de vos données personnelles. Les enfants et adolescents courent déjà un risque sur les réseaux sociaux, mais les adultes, les pouvoir publics, les banques et même les grandes entreprises Web ne sont pas à l’abri des risques.
 
 # **Références**
 
