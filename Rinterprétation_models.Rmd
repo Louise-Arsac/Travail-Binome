@@ -1,0 +1,95 @@
+---
+title: "Réseaux neuronaux"
+author: "Zélie Froment & Louise Arsac"
+date: "04/05/2020"
+output:
+  html_document:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+  pdf_document:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+  word_document:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 3 '3'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r library, include=FALSE} 
+knitr::opts_chunk$set(echo = TRUE) 
+#ajouter toute les library nécessaires
+library(ade4)
+library(FactoMineR)
+library(bookdown)
+library(knitr)
+library(tibble)
+library(tinytex)
+```
+
+
+```{r DataReseau, echo = FALSE, eval =TRUE}
+
+DataReseau <- read.csv2(file = "models.csv",header=TRUE,sep=",", dec=".") #,encoding="latin1")# on import en créant l'objet
+datatibble <- as_tibble(DataReseau)
+knitTab1 <- knitr::kable(DataReseau[8:13,3:8],caption="Pourcentage de réussite par rapport au nombre d'images de test")
+knitTab1
+```
+
+
+# ***Graphique***
+
+```{r datareg, echo = FALSE,eval=TRUE}
+reussite <- unlist(DataReseau[8:13,8])
+passes <- unlist(DataReseau[8:13,5])
+par(mar=c(4,14,3,1))
+barplot(reussite~passes, las=1, main = "Pourcentage de réussite selon le nombre de passes", cex.main =1,xlab = "nombre de passes",ylab="% de réussite")
+```
+
+
+```{r dataimagetraining, echo = FALSE,eval=TRUE}
+nb_imagetraining <- unlist(DataReseau[,4])
+reussite <- unlist(DataReseau[,8])
+par(mar=c(4,14,3,1))
+plot(reussite~nb_imagetraining, las=1, main = "Pourcentage de réussite selon le nombre d'images training", cex.main =1,xlab = "nombre d'images dans training",ylab="% de réussite")
+```
+
+```{r dataimagetest, echo = FALSE,eval=TRUE}
+nb_imagetest <- unlist(DataReseau[,7])
+reussite <- unlist(DataReseau[,8])
+par(mar=c(4,14,3,1))
+plot(reussite~nb_imagetest, las=1, main = "Pourcentage de réussite selon le nombre d'images test", cex.main =1,xlab = "nombre d'images dans test",ylab="% de réussite")
+```
+
+5p :
+CNN  binary  ( 2 catégories)
+rhinoceros  :  3 / 20 ( 15 %)
+lion  :  0 / 19 ( 0 %)
+Global :  3 / 39 ( 7 %)
+
+10p :
+CNN  binary  ( 2 catégories)
+rhinoceros  :  4 / 20 ( 20 %)
+lion  :  1 / 20 ( 5 %)
+Global :  5 / 40 ( 12 %)
+
+15p
+CNN  binary  ( 2 catégories)
+rhinoceros  :  4 / 20 ( 20 %)
+lion  :  3 / 19 ( 15 %)
+Global :  7 / 39 ( 17 %)
+
+25p
+CNN  binary  ( 2 catégories)
+rhinoceros  :  3 / 20 ( 15 %)
+lion  :  2 / 20 ( 10 %)
+Global :  5 / 40 ( 12 %)
