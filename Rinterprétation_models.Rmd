@@ -20,6 +20,48 @@ output:
     toc: yes
     toc_depth: 3 '3'
 ---
+# ***Généralités :nos essais***
+
+* Domaines choisis pour la reconnaissance d'images : les animaux 
+
+* Catégories pour les images à classer : lion et rhinochérose
+
+* Remarques sur la constitution du corpus d'apprentissage:
+    Deux sous dossiers ont été créée via le script python dataset_slipper.py, intitulés training-set et test-set. Le premier sert pour l'apprentissage, et le second pour le contrôle de l'apprentissage. 
+    Pour cela, il était nécessaire de créer un dossier raw-set dans dataset, car sinon, aucun changement n"était remarqué. Cette première phase permet donc de trier dans un premier temps les images dans les deux sous dossiers. 
+    
+* Remarques sur la création du réseau neuronal (son utilisation, sa performance):
+    Le réseau neuronal se base sur le code simple_cnn.py. Ce dernier gère le réseau neuronal avec les différentes classes. Ensuite, le code ajoute les couches du réseau neuronal. 
+    Toutes les couches sont connectées entre elles. On appelle cela une multicouche. Seuls les derniers neurones que l'on trie arrive en sortie. Ce programme permet donc d'analyser les images, de les trier et de tester statistiquement la fiabilité du triage à l'aide de passe (5 passes, 10 passes... 25 passes). Plus on fait de passe, plus les images correspondent à la requête en question. 
+    
+    Voici quelques exemples de sortie que l'on obtient lors du lancement du programme simple_cnn.py :
+    
+    5p :
+CNN  binary  ( 2 catégories)
+rhinoceros  :  3 / 20 ( 15 %)
+lion  :  0 / 19 ( 0 %)
+Global :  3 / 39 ( 7 %)
+
+10p :
+CNN  binary  ( 2 catégories)
+rhinoceros  :  4 / 20 ( 20 %)
+lion  :  1 / 20 ( 5 %)
+Global :  5 / 40 ( 12 %)
+
+15p
+CNN  binary  ( 2 catégories)
+rhinoceros  :  4 / 20 ( 20 %)
+lion  :  3 / 19 ( 15 %)
+Global :  7 / 39 ( 17 %)
+
+25p
+CNN  binary  ( 2 catégories)
+rhinoceros  :  3 / 20 ( 15 %)
+lion  :  2 / 20 ( 10 %)
+Global :  5 / 40 ( 12 %)
+    
+    
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -35,7 +77,7 @@ library(knitr)
 library(tibble)
 library(tinytex)
 ```
-
+# ***Tableau***
 
 ```{r DataReseau, echo = FALSE, eval =TRUE}
 
@@ -46,7 +88,7 @@ knitTab1
 ```
 
 
-# ***Graphique***
+# ***Graphiques et interprétation***
 
 ```{r datareg, echo = FALSE,eval=TRUE}
 reussite <- unlist(DataReseau[8:13,8])
@@ -70,26 +112,9 @@ par(mar=c(4,14,3,1))
 plot(reussite~nb_imagetest, las=1, main = "Pourcentage de réussite selon le nombre d'images test", cex.main =1,xlab = "nombre d'images dans test",ylab="% de réussite")
 ```
 
-5p :
-CNN  binary  ( 2 catégories)
-rhinoceros  :  3 / 20 ( 15 %)
-lion  :  0 / 19 ( 0 %)
-Global :  3 / 39 ( 7 %)
 
-10p :
-CNN  binary  ( 2 catégories)
-rhinoceros  :  4 / 20 ( 20 %)
-lion  :  1 / 20 ( 5 %)
-Global :  5 / 40 ( 12 %)
 
-15p
-CNN  binary  ( 2 catégories)
-rhinoceros  :  4 / 20 ( 20 %)
-lion  :  3 / 19 ( 15 %)
-Global :  7 / 39 ( 17 %)
+# ***Remarques***
 
-25p
-CNN  binary  ( 2 catégories)
-rhinoceros  :  3 / 20 ( 15 %)
-lion  :  2 / 20 ( 10 %)
-Global :  5 / 40 ( 12 %)
+Cet exercice met en application le deep learning et nous comprenons l'intérêt du réseau neuronal. Cependant, je n'ai pas pu tester personnellement le code simple_cnn.py car je fais partie des 12 élèves  n'ayant pas pu installer correctement le package tensorflow. De ce fait, la compréhension du deep learning a été plus compliquer. 
+
