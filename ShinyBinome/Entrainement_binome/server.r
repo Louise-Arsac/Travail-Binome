@@ -5,7 +5,10 @@ server <- function(input, output, session) {
     head(iris)
   })
   
-  output$dynamic<- renderDataTable (iris, options = list (pageLengh= 5))
+  output$dynamic<- renderDataTable ({
+    iris
+    options = list (pageLengh= 5)
+  })
   
   output$longpetale <- renderPlot(
     width = function() input$width,

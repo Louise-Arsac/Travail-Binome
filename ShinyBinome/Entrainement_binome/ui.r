@@ -16,16 +16,10 @@ ui <- fluidPage(
   sliderInput("height", "Hauteur graphique", min = 200, max = 500, value = 400),
   sliderInput("width", "Largeur graphique", min = 200, max = 600, value = 500),
   plotOutput("iris_Plot"),
-<<<<<<< HEAD
   tableOutput("static"),
   dataTableOutput("dynamic")
  
-=======
-  
->>>>>>> eae9784f0b37c92f67ed72778a2b91d812883fab
 )
-
-  
   
   
       # Informations generales : 
