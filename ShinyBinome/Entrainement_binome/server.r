@@ -5,11 +5,15 @@ server <- function(input, output, session) {
     head(iris)
   })
   
-  output$longpetale <- renderPlot({
-    data("iris")
-    u1 <- iris[,3]
-    u2 <- iris[,5]
-    plot(u1~u2, xlab="Espèces", ylab = "Longueur des pétales", main = "Différence de taille des pétales selon l'espèce")
+  output$dynamic<- renderDataTable (iris, options = list (pageLengh= 5))
+  
+  output$longpetale <- renderPlot(
+    width = function() input$width,
+    height = function() input$height,
+    { data("iris")
+      u1 <- iris[,3]
+      u2 <- iris[,5]
+      plot(u1~u2, xlab="Espèces", ylab = "Longueur des pétales", main = "Différence de taille des pétales selon l'espèce")
   })
   
   output$iris_Plot<- renderPlot({
