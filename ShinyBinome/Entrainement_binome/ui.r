@@ -11,9 +11,11 @@ ui <- fluidPage(
   sliderInput("toit", "Indiquez le nombre de personne vivant avec vous sous votre foyer", 
               min = 0, max = 15, value = 0),
   radioButtons("iris", "Aimez-vous les iris", c("yes","no","maybe")),
+  tableOutput("static"),
   plotOutput("longpetale"),
+  sliderInput("height", "Hauteur graphique", min = 200, max = 500, value = 400),
+  sliderInput("width", "Largeur graphique", min = 200, max = 600, value = 500),
   plotOutput("iris_Plot"),
-  tableOutput("static")
   
 )
 
