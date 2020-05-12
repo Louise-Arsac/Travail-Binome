@@ -5,7 +5,7 @@ ui <- fluidPage(
   textInput ("name", "Indiquez votre prenom"),
   textInput("surname","Votre nom de famille :"),
   dateInput("naissance", "Date de naissance: "),
-  selectInput("nationalite", "Quelle est votre nationalite ? ", state.name),
+  selectInput("nationalite", "Quelle est votre nationalite ? ", c("Allemande","Anglaise","Américaine","Belge","Française","Italienne","Japonaise","Russe","Suisse")),
   textAreaInput("job", "Quelle est votre profession?", rows = 4),
   radioButtons("sexe", "Indiquez ci-dessous votre sexe", c("Femme", "Homme")),
   sliderInput("toit", "Indiquez le nombre de personne vivant avec vous sous votre foyer", 
