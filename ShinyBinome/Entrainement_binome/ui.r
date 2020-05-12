@@ -12,6 +12,7 @@ ui <- fluidPage(
               min = 0, max = 15, value = 0),
   radioButtons("iris", "Aimez-vous les iris", c("yes","no","maybe")),
   plotOutput("longpetale"),
+  plotOutput("iris_Plot"),
   tableOutput("static")
   
 )
