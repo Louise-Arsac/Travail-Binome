@@ -1,11 +1,12 @@
-installe.packages("iris")
+
+install.packages("iris")
 library(shiny)
 library (iris)
 
 
 ui <- fluidPage(
  
-      # Informations générales : 
+      # Informations generales : 
   
   textInput ("name", "Indiquez votre prénom"),
   textInput("surname", "Indiquez votre nom de famille"),
@@ -16,23 +17,23 @@ ui <- fluidPage(
   radioButtons("sexe", "Indiquez ci-dessous votre sexe"),
   radioButtons("iris", "Aimez-vous les iris"),
   
-  # entrée pour les graph
+  # entree pour les graph :
   plotOutput("iris_graph", width = "400 px")
   
   
 )
-#Nom/Prénom avec TextInput
-#Âge avec TextInput
+#Nom/Prenom avec TextInput
+#Age avec TextInput
 #Sexe avec RadioButtons
-#Nationalité avec selectInput
+#Nationalite avec selectInput
 #Profession avec textAreaInput()
-#Combien de personnes sous le même toit? avec sliderInput
+#Combien de personnes sous le meme toit? avec sliderInput
 #Aimez-vous les iris? avec RadioButtons (yes/no/maybe)
 
 #Afficher tableau iris (-	dataTableOutput ()et renderDataTable()rendre un tableau dynamique, 
   #montrant un nombre fixe de lignes ainsi que des commandes pour changer les lignes qui sont visibles.
-#plot des espèces en fonction longueur pétale avec PlotOutput
-#barplot des espèces en fonction longueur sépale
+#plot des espèces en fonction longueur petale avec PlotOutput
+#barplot des espèces en fonction longueur sepale
 
 #Faire un hisogramme interactif : les valeurs sont entrées par la personnes ?
   #https://mastering-shiny.org/basic-reactivity.html?
