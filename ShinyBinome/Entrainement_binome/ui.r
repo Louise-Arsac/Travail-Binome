@@ -11,8 +11,8 @@ ui <- fluidPage(
   sliderInput("toit", "Indiquez le nombre de personne vivant avec vous sous votre foyer", 
               min = 0, max = 15, value = 0),
   radioButtons("iris", "Aimez-vous les iris", c("yes","no","maybe")),
-  plotOutput("distPlot")
-  
+  plotOutput("distPlot"),
+  tableOutput("static")
   
 )
 
