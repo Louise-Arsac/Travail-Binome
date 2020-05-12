@@ -1,4 +1,26 @@
+installe.packages("iris")
 library(shiny)
+library (iris)
+
+
+ui <- fluidPage(
+ 
+      # Informations générales : 
+  
+  textInput ("name", "Indiquez votre prénom"),
+  textInput("surname", "Indiquez votre nom de famille"),
+  dateInput("naissance", "Date de naissance: "),
+  textAreaInput("job", "Quelle est votre profession?", rows = 4),
+  selectInput("nationalite", "Quelle est votre nationalité? "), 
+  sliderInput("toit", "Indiquez le nombre de personne vivant sous votre foyer"), 
+  radioButtons("sexe", "Indiquez ci-dessous votre sexe"),
+  radioButtons("iris", "Aimez-vous les iris"),
+  
+  # entrée pour les graph
+  plotOutput("iris_graph", width = "400 px")
+  
+  
+)
 #Nom/Prénom avec TextInput
 #Âge avec TextInput
 #Sexe avec RadioButtons
