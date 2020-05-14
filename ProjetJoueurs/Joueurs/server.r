@@ -34,7 +34,7 @@ server <- function(input, output, session) {
       paste("joueur", ".csv", sep = "")
     },
     content= function(file){
-      write.csv(reslign(), file, row.names = FALSE)
+      write.csv(reslignInput(), file, row.names = FALSE)
     }
   )
 } 
