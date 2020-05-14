@@ -1,6 +1,7 @@
 library(datasets)
 library(shiny)
 
+
 ui <- fluidPage(
   textInput ("name1", "Indiquez le prénom du 1er joueur"),
   textInput("surname1","Le nom de famille du 1er joueur:"),
@@ -18,6 +19,15 @@ ui <- fluidPage(
   
   textOutput("joueur"),
   tableOutput ("listejoueurs"),
-  textOutput ("info")
+  textOutput ("info"),
   
+  fileInput("file", NULL, accept = c(".csv", ".tsv")),
+  tableOutput("head"),
+  textOutput("nomtab")
+) 
+  
+  
+  
+  
+
 )

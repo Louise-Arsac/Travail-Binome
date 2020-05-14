@@ -3,17 +3,38 @@
 
 server <- function(input, output, session) {
   output$joueur <- renderText({
-    paste("Joueur :",input$name, input$surname, input$age, input$nationalite, input$job, input$sexe)
+    paste("Joueur :",input$name1, input$surname1, input$age1, input$nationalite1, input$job1, input$sexe1)
   })
   
   output$listejoueurs <- renderTable({
     tabjoueur <- data.frame("Prénom"= c(input$name1,input$name2), "Nom" =c(input$surname1,input$surname2), "Date de naissance"=c(input$age1,input$age2), "Nationalité" = c(input$nationalite1,input$nationalite2), "Profession" = c(input$job1,input$job2),"Sexe"=c(input$sexe1,input$sexe2))
   })
   
-  output$info <-renderText({
-    conteneur <- "Réponses :"
-    conteneur <- c(conteneur,input$name)
+  output$head <- renderTable({
+    l1 <- list()
+    l1 <- read.csv2("joueur", header = TRUE, sep = ",")
+    l1
+    
+  })
+  datajoueur <- reactive({
+    req(input$file)
+    
+    ext <- tools::file_ext(input$file$name)
+    switch(ext,
+           csv = vroom::vroom(input$file$datapath, delim = ","),
+           tsv = vroom::vroom(input$file$datapath, delim = "\t"),
+           validate("Invalid file; Please upload a .csv or .tsv file")
+    )
+  })
   
-})
+  output$head <- renderTable({
+    (datajoueur())
+  })
+  
+  output$nomtab <- renderText({
+    names(datajoueur())
+
+  })
+  
 } 
 
